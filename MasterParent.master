@@ -1,0 +1,236 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterParent.master.cs" Inherits="MasterParent" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Real Estate Projects & Plot Projects Developers Compnay Of Shah Developer</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Font Roboto -->
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Varela+Round&display=swap" rel="stylesheet" />-->
+
+    <!-- Bootstrap -->
+    <link href="Vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="Vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- aos -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- FancyBox -->
+    <link href="css/jquery.fancybox.css" rel="stylesheet" />
+    <script src="js/jquery.fancybox.js"></script>
+
+    <!-- Swiper slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!--Animate Css  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Main Css -->
+    <link href="css/shahDev.css" rel="stylesheet" />
+
+    <!-- Bootstrap icon -->
+    <link href="Vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <!--<a href="Vendor/bootstrap-icons/bootstrap-icons.json"></a>-->
+
+
+    <%-- Tost Notification --%>
+    <link href="<%=rootPath + "css/toastr.css"%>" rel="stylesheet" />
+    <script src="<%=rootPath + "js/toastr.js"%>"></script>
+
+    <script type="text/javascript">
+        function TostTrigger(EventName, MsgText) {
+            // code to be executed
+            Command: toastr[EventName](MsgText)
+            toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-full-width",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "slideDown",
+                "hideMethod": "fadeOut"
+            }
+
+        }
+    </script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- Header start -->
+    <section id="header">
+        <div class="header">
+        </div>
+        <div class="">
+            <div class="container-fluid">
+                <div class="">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Header End -->
+    <!-- Navigation Start -->
+    <section id="navbar" class="mb-0 mt-0">
+        <a href="#bannerSp" title="" class="txtDecNone">
+            <img src="images/shah-logo.png" class="img-fluid mb-2 shahlogo p-2" />
+            <!-- icons -->
+            <div class="float-end me-4 mt-2" id="soacilico">
+                <a href="#" target="_blank" class="topFb me-1" title="Follow Us on facebook"></a>
+
+                <a href="#" target="_blank" class="topyouTube me-1" title="Follow Us on Youtube"></a>
+                <a href="#" target="_blank" class="demo" title="Follow Us on Instagram"></a>
+            </div>
+        </a>
+        <div id="nav">
+            <div id="topNavPanel" class="shadow">
+                <div class="container-fluid">
+                    <ul id="topNav" class="">
+                        <a href="javascript:void(0)" class="closeBtn mb-5" onclick="closeNav()">&times;</a>
+                        <li><a href="#topheader">Home</a></li>
+                        <li><a href="<%=rootPath + "about-us"%>">About Us</a></li>
+                        <li><a href="<%=rootPath + "our-team"  %>">Our Team</a></li>
+                        <li><a href="#news">Projects</a></li>
+                        <li><a href="<%=rootPath + "energy"%>">Energy</a></li>
+                        <li class=""><a class="" href="<%=rootPath + "news"%>">News</a></li>
+                        <li class=""><a class="" href="<%=rootPath + "testimonials" %>">Testimonials</a></li>
+                        <li class=""><a class="" href="<%=rootPath + "contact-us" %>" style="color: #2e9bca" id="bemem">Contact Us</a></li>
+                    </ul>
+                    <div class="float_clear"></div>
+                    <div id="mobNav">
+                        <div class="p-5">
+                            <span class="regular upperCase text-white letter-sp-3 mrg_B_15">Phone:</span>
+                            <a href="tel:+919860470444" class="medium text-white light text-decoration-none">+91 9860470444</a>
+                            <span class="space30"></span>
+                            <span class="regular upperCase text-white letter-sp-3 mrg_B_15">Email:</span>
+                            <a href="mailto:demo@gmail.com" class="text-white breakWord txtDecNone">demo&#46;15&#64;gmail&#46;com</a>
+                            <span class="space30"></span>
+                            <span class="regular upperCase text-white letter-sp-3 mrg_B_15">Follow Us:</span>
+                            <a href="#" target="_blank" class="me-2" title="Follow us on facebook"><img src="images/icons/tFb.png" /></a>
+                            <a href="#" target="_blank" class="me-2" title="Follow us on Twitter"><img src="images/icons/twitter-top.png" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="float_clear"></div>
+            <a id="navBtn" onclick="openNav()"></a>
+        </div>
+    </section>
+    <!-- Navigation End -->
+   <%-- <span class="space30"></span>--%>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <span class="space30"></span>
+     <!-- Footer start -->
+    <section id="footer" class="bgfooter">
+        <!-- Footer Starts -->
+        <div class="footerBanner">
+            <div class="overlyFooter">
+                <span class="space20"></span>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="p-3">
+                                <h4 class="footerCaption clrWhite mb-2 semiBold upperCase letter-sp-2">Navigation</h4>
+                                <div class="fLine mb-3"><span class="fAbsLine"></span></div>
+                                <ul class="footerNav">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="about-us">About Us</a></li>
+                                    <li><a href="our-products">Projects</a></li>
+                                    <li><a href="enquiry">Enegry</a></li>
+                                    <li><a href="testimonials">Testimonials</a></li>
+                                    <li><a href="career">News</a></li>
+                                    <li><a href="contact-us">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="p-3">
+                                <h4 class="footerCaption clrWhite mb-2 semiBold upperCase letter-sp-2">Contact Info</h4>
+                                <div class="fLine mb-3"><span class="fAbsLine"></span></div>
+                                <span class="clrmediumgrey line-ht-5 small fontRegular addr">
+                                    'Poshish', 1st Floor, Lale Plots, Madhavnagar Road, Sangli - 416416 Sangli, Maharashtra (India)
+                                </span>
+                                <span class="space10"></span>
+                                <a href="#" class="email breakWord line-ht-5 small txtDecNone">san&#64;apshah&#46;com</a>
+                                <span class="space15"></span>
+                                <span class="foo_call line-ht-5 small txtDecNone">+(0233) 2377585</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="p-3">
+                                <h4 class="footerCaption clrWhite mb-2 semiBold upperCase letter-sp-2">Latest Properties</h4>
+                                <div class="fLine mb-3"><span class="fAbsLine"></span></div>
+                                <div class="row gy-2 gx-0 p-0">
+                                    <div class="col-6">
+                                        <img src="images/interior-1.jpg" class="img-fluid rounded w-75" />
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="fontRegular footxtClr mt-3">Luxury House in Greenville</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <img src="images/interior-1.jpg" class="img-fluid rounded w-75" />
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="fontRegular footxtClr mt-3">Luxury House in Greenville</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <img src="images/interior-1.jpg" class="img-fluid rounded w-75" />
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="fontRegular footxtClr mt-3">Luxury House in Greenville</p>
+                                    </div>
+                                </div>
+                                <!--<div class="fLine mb-3"><span class="fAbsLine"></span></div>
+                                <span class="footxtClr line-ht-5 small fontRegular">
+                                    Our Real Estate Inc company is committed to delivering a high level of expertise, customer service, and attention to detail to the marketing and sales of luxury real estate, and rental properties.
+                                </span>
+                                <span class="space30"></span>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="space20"></span>
+                <span class="footerLine"></span>
+                <span class="space20"></span>
+
+                <div class="container text-center">
+                    <span class="clrGrey mrg_B_5 small fontRegular">&copy; <%=currentyear %> | Shah Developers , All Rights Reserved</span>
+                    <span class="clrGrey small fontRegular">Website By <a href="http://www.intellect-systems.com" target="_blank" class="intellect" title="Website Design and Development Service By Intellect Systems">Intellect Systems</a></span>
+                    <span class="space20"></span>
+                </div>
+
+            </div>
+        </div>
+        <!-- Footer Ends -->
+    </section>
+    <!-- footer end -->
+</body>
+</html>
