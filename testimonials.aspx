@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Testimonials | Shah Developers" Language="C#" MasterPageFile="~/MasterParent.master" AutoEventWireup="true" CodeFile="testimonials.aspx.cs" Inherits="testimonials" %>
+<%@ MasterType VirtualPath="~/MasterParent.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -23,7 +24,8 @@
             <p class="shorline"></p>
         </div>
         <div class="row gy-3 mt-3">
-            <div class="col-lg-6">
+            <%=teststr %>
+            <%--<div class="col-lg-6">
                 <div class="card mb-3">
                     <div class="card-header">
                         Royale Greens
@@ -75,7 +77,7 @@
                         </blockquote>
                     </div>
                 </div>
-            </div>
+            </div>--%>
         </div>
     </div>
 </asp:Content>

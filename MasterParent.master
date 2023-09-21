@@ -21,13 +21,13 @@
     <script src="Vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- aos -->
-    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="<%=rootPath + "js/jquery-2.2.4.min.js"%>"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- FancyBox -->
-    <link href="css/jquery.fancybox.css" rel="stylesheet" />
-    <script src="js/jquery.fancybox.js"></script>
+    <link href="<%=rootPath + "css/jquery.fancybox.css"%>" rel="stylesheet" />
+    <script src="<%=rootPath + "js/jquery.fancybox.js" %>"></script>
 
     <!-- Swiper slider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- Main Css -->
-    <link href="css/shahDev.css" rel="stylesheet" />
+    <link href="<%=rootPath + "css/shahDev.css"%>"  rel="stylesheet" />
 
     <!-- Bootstrap icon -->
     <link href="Vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
@@ -92,8 +92,8 @@
     <!-- Header End -->
     <!-- Navigation Start -->
     <section id="navbar" class="mb-0 mt-0">
-        <a href="#bannerSp" title="" class="txtDecNone">
-            <img src="images/shah-logo.png" class="img-fluid mb-2 shahlogo p-2" />
+        <a href="<%=rootPath %>" title="" class="txtDecNone">
+            <img src="<%=rootPath + "images/shah-logo.png"%>" class="img-fluid mb-2 shahlogo p-2" />
             <!-- icons -->
             <div class="float-end me-4 mt-2" id="soacilico">
                 <a href="#" target="_blank" class="topFb me-1" title="Follow Us on facebook"></a>
@@ -107,10 +107,10 @@
                 <div class="container-fluid">
                     <ul id="topNav" class="">
                         <a href="javascript:void(0)" class="closeBtn mb-5" onclick="closeNav()">&times;</a>
-                        <li><a href="#topheader">Home</a></li>
+                        <li><a href="<%=rootPath %>">Home</a></li>
                         <li><a href="<%=rootPath + "about-us"%>">About Us</a></li>
                         <li><a href="<%=rootPath + "our-team"  %>">Our Team</a></li>
-                        <li><a href="#news">Projects</a></li>
+                        <li><a href="<%=rootPath + "projects/land-developement" %>">Projects</a></li>
                         <li><a href="<%=rootPath + "energy"%>">Energy</a></li>
                         <li class=""><a class="" href="<%=rootPath + "news"%>">News</a></li>
                         <li class=""><a class="" href="<%=rootPath + "testimonials" %>">Testimonials</a></li>
@@ -160,13 +160,13 @@
                                 <h4 class="footerCaption clrWhite mb-2 semiBold upperCase letter-sp-2">Navigation</h4>
                                 <div class="fLine mb-3"><span class="fAbsLine"></span></div>
                                 <ul class="footerNav">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="about-us">About Us</a></li>
-                                    <li><a href="our-products">Projects</a></li>
-                                    <li><a href="enquiry">Enegry</a></li>
-                                    <li><a href="testimonials">Testimonials</a></li>
-                                    <li><a href="career">News</a></li>
-                                    <li><a href="contact-us">Contact us</a></li>
+                                    <li><a href="<%=rootPath%>">Home</a></li>
+                                    <li><a href="<%=rootPath + "about-us"%>">About Us</a></li>
+                                    <li><a href="<%=rootPath + "projects/land-developement"%>">Projects</a></li>
+                                    <li><a href="<%=rootPath + "energy" %>">Enegry</a></li>
+                                    <li><a href="<%=rootPath + "testimonials"%>">Testimonials</a></li>
+                                    <li><a href="<%=rootPath + "news" %>">News</a></li>
+                                    <li><a href="<%=rootPath + "contact-us" %>"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -190,22 +190,22 @@
                                 <div class="fLine mb-3"><span class="fAbsLine"></span></div>
                                 <div class="row gy-2 gx-0 p-0">
                                     <div class="col-6">
-                                        <img src="images/interior-1.jpg" class="img-fluid rounded w-75" />
+                                        <img src="<%=rootPath + "images/residental-project.jpg"%>" class="img-fluid rounded w-75" />
                                     </div>
                                     <div class="col-6">
-                                        <p class="fontRegular footxtClr mt-3">Luxury House in Greenville</p>
+                                        <p class="fontRegular footxtClr mt-3">Luxury House in Sangli</p>
                                     </div>
                                     <div class="col-6">
-                                        <img src="images/interior-1.jpg" class="img-fluid rounded w-75" />
+                                        <img src="<%=rootPath + "images/plot-project.png"%>"  class="img-fluid rounded w-75" />
                                     </div>
                                     <div class="col-6">
-                                        <p class="fontRegular footxtClr mt-3">Luxury House in Greenville</p>
+                                        <p class="fontRegular footxtClr mt-3">Luxury House in <br />Miraj</p>
                                     </div>
                                     <div class="col-6">
-                                        <img src="images/interior-1.jpg" class="img-fluid rounded w-75" />
+                                        <img src="<%=rootPath + "images/royale-vt-avenue-na-plots-3.jpg"%>" class="img-fluid rounded w-75" />
                                     </div>
                                     <div class="col-6">
-                                        <p class="fontRegular footxtClr mt-3">Luxury House in Greenville</p>
+                                        <p class="fontRegular footxtClr mt-3">Luxury House in Kolhapur</p>
                                     </div>
                                 </div>
                                 <!--<div class="fLine mb-3"><span class="fAbsLine"></span></div>

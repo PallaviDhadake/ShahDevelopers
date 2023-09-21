@@ -39,7 +39,7 @@ public class iClass : IDisposable
     /// <returns>connection string</returns>
     public string OpenConnection()
     {
-        return System.Web.Configuration.WebConfigurationManager.ConnectionStrings["SamruddhiData"].ConnectionString;
+        return System.Web.Configuration.WebConfigurationManager.ConnectionStrings["ShahDev"].ConnectionString;
     }
 
     /// <summary>
@@ -952,8 +952,8 @@ public class iClass : IDisposable
                 msg.Attachments.Add(file);
             }
            // SmtpClient smtp = new SmtpClient("mail.intellect-systems.com", 25);
-            SmtpClient smtp = new SmtpClient("smtp.zoho.com", 587);
-            smtp.Credentials = new NetworkCredential("info@intellect-systems.com", "iTrans@2017");
+            SmtpClient smtp = new SmtpClient("mail.shahdevelopers.org", 25);
+            smtp.Credentials = new NetworkCredential("info@shahdevelopers.org", "jTeam@2015");
 
             smtp.EnableSsl = true;
             smtp.Send(msg);

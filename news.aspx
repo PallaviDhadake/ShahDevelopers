@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="News | Shah Developers" Language="C#" MasterPageFile="~/MasterParent.master" AutoEventWireup="true" CodeFile="news.aspx.cs" Inherits="news" %>
+<%@ MasterType VirtualPath="~/MasterParent.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -26,7 +27,8 @@
         </div>
         <span class="space20"></span>
         <div class="row gy-3">
-            <div class="col-lg-4">
+            <%=nwsstr %>
+            <%--<div class="col-lg-4">
                 <img src="images/residental-1.jpg" class="img-fluid" />
             </div>
             <div class="col-lg-8">
@@ -62,12 +64,8 @@
                 <span class="space10"></span>
                 <p class="fontRegular light line-ht-7 mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 <a href="#" class="text-decoration-none">Continue Reading...</a>
-            </div>
+            </div>--%>
         </div>
-
-       
-      
-        
     </div>
     <%-- News end --%>
 </asp:Content>

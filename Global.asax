@@ -12,7 +12,13 @@
     {
         routes.MapPageRoute("nws-route", "news/{newsId}", "~/news.aspx", false, new System.Web.Routing.RouteValueDictionary { { "newsId", string.Empty } });
 
-        routes.MapPageRoute("project-route", "projects/{projId}", "~/projects.aspx", false, new System.Web.Routing.RouteValueDictionary { { "projId", string.Empty } });
+       // routes.MapPageRoute("project-route", "projects/{protype}", "~/projects.aspx", false, new System.Web.Routing.RouteValueDictionary { { "protype", string.Empty } });
+
+
+        routes.MapPageRoute("project-route", "projects/{protype}", "~/projects.aspx", false, new System.Web.Routing.RouteValueDictionary { { "protype", string.Empty } });
+
+
+        routes.MapPageRoute("projectlist-route", "project-listings/{projectId}", "~/project-listings.aspx", false, new System.Web.Routing.RouteValueDictionary { { "projectId", string.Empty } });
 
         //routes.MapPageRoute("book-route", "book-publication/{bookId}", "~/book-publication.aspx", false, new System.Web.Routing.RouteValueDictionary { { "bookId", string.Empty } });
         //routes.MapPageRoute("tour-route", "tours/{trType}", "~/tours.aspx", false, new System.Web.Routing.RouteValueDictionary { { "trType", string.Empty } });

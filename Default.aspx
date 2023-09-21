@@ -95,11 +95,11 @@
     <!-- Header End -->
     <!-- Navigation Start -->
     <section id="navbar" class="mb-0 mt-0">
-        <a href="#bannerSp" title="" class="txtDecNone">
+        <a href="<%=rootPath %>" title="" class="txtDecNone">
             <img src="images/shah-logo.png" class="img-fluid mb-2 shahlogo p-2" />
             <!-- icons -->
             <div class="float-end me-4 mt-2" id="soacilico">
-                <a href="#" target="_blank" class="topFb me-1" title="Follow Us on facebook"></a>
+                <a href="https://www.facebook.com/shahdevelopers1" target="_blank" class="topFb me-1" title="Follow Us on facebook"></a>
 
                 <a href="#" target="_blank" class="topyouTube me-1" title="Follow Us on Youtube"></a>
                 <a href="#" target="_blank" class="demo" title="Follow Us on Instagram"></a>
@@ -110,10 +110,10 @@
                 <div class="container-fluid">
                     <ul id="topNav" class="">
                         <a href="javascript:void(0)" class="closeBtn mb-5" onclick="closeNav()">&times;</a>
-                        <li><a href="#topheader">Home</a></li>
+                        <li><a href="<%=rootPath%>">Home</a></li>
                         <li><a href="about-us">About Us</a></li>
                         <li><a href="our-team">Our Team</a></li>
-                        <li><a href="#news">Projects</a></li>
+                        <li><a href="projects/land-developement">Projects</a></li>
                         <li><a href="energy">Energy</a></li>
                         <li class=""><a class="" href="news">News</a></li>
                         <li class=""><a class="" href="testimonials">Testimonials</a></li>
@@ -123,10 +123,10 @@
                     <div id="mobNav">
                         <div class="p-5">
                             <span class="regular upperCase text-white letter-sp-3 mrg_B_15">Phone:</span>
-                            <a href="tel:+919860470444" class="medium text-white light text-decoration-none">+91 9860470444</a>
+                            <a href="tel:+(0233) 2377585" class="medium text-white light text-decoration-none">(0233) 2377585</a>
                             <span class="space30"></span>
                             <span class="regular upperCase text-white letter-sp-3 mrg_B_15">Email:</span>
-                            <a href="mailto:demo@gmail.com" class="text-white breakWord txtDecNone">demo&#46;15&#64;gmail&#46;com</a>
+                            <a href="mailto:demo@gmail.com" class="text-white breakWord txtDecNone">san&#64;apshah&#46;gmail&#46;com</a>
                             <span class="space30"></span>
                             <span class="regular upperCase text-white letter-sp-3 mrg_B_15">Follow Us:</span>
                             <a href="#" target="_blank" class="me-2" title="Follow us on facebook"><img src="images/icons/tFb.png" /></a>
@@ -143,17 +143,18 @@
     <!-- banner start -->
     <section id="banner" class="position-relative">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <%=bannerstr %>
+           <%-- <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/banner-1.jpg" class="d-block w-100" alt="...">
+                    <img src="images/banner-1.jpg" class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner-2.jpg" class="d-block w-100" alt="...">
+                    <img src="images/banner-2.jpg" class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner-3.jpg" class="d-block w-100" alt="...">
+                    <img src="images/banner-3.jpg" class="d-block w-100" alt="..." />
                 </div>
-            </div>
+            </div>--%>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -223,7 +224,7 @@
                 <p class="light clrGrey mb-3"> We understand your unique needs and tastes! Get started on buying your new home! </p>
                 <p class="fontRegular light line-ht-5 clrmediumgrey mb-3"><span class="colorBlack light">" Shah Developers is a leading group engaged in Land Development & Construction. The company had started its activities way back in 1988 "</span>  with a view to develop lands & Unique Residential / Commercial Complexes. With just two decades of continuous contribution, Shah Developers, today, is a class by themselves in the Real Estate & Construction industry in and around Sangli. Beauty & versatility, strength & simplicity and indomitable dependability are few of the focus areas of the company, when it comes to its projects.</p>
                 <div class="text-center mt-3">
-                    <a href="#" class="btnViewMore">View More</a>
+                    <a href="about-us" class="btnViewMore">View More</a>
                 </div>
             </div>
         </div>
@@ -243,26 +244,30 @@
                     <div class="row gy-3 gx-3">
                         <span class="space15"></span>
                         <div class="col-md-6" id="projCat">
-                            <div class="overlayBanner">
-                                <img src="images/plot-project.png" class="img-fluid rounded" />
-                                <div class="overlay">
-                                    <div class="p-4">
-                                        <p class="semiBold float-start text-white">Plot Project</p>
-                                        <p class="text-white bottomele">17 listing</p>
+                            <a href="projects/land-developement" class="text-decoration-none">
+                                <div class="overlayBanner">
+                                    <img src="images/plot-project.png" class="img-fluid rounded" />
+                                    <div class="overlay">
+                                        <div class="p-4">
+                                            <p class="semiBold float-start text-white">Plot Project</p>
+                                            <p class="text-white bottomele">17 listing</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-md-6" id="projCat">
-                            <div class="overlayBanner">
-                                <img src="images/residental-project.jpg" class="img-fluid rounded" />
-                                <div class="overlay">
-                                    <div class="p-4">
-                                        <p class="semiBold float-start text-white">Residential Project</p>
-                                        <p class="text-white bottomele">17 listing</p>
+                            <a href="projects/construction" class="text-decoration-none">
+                                <div class="overlayBanner">
+                                    <img src="images/residental-project.jpg" class="img-fluid rounded" />
+                                    <div class="overlay">
+                                        <div class="p-4">
+                                            <p class="semiBold float-start text-white">Residential Project</p>
+                                            <p class="text-white bottomele">17 listing</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -404,7 +409,8 @@
                 Our distinctive buildings fill the skyline and streetscapes of the city
             </p>
             <div id="carouselExampleControls" class="carousel slide position-relative" data-bs-ride="carousel">
-                <div class="carousel-inner">
+                <%=GetNewsData1() %>
+                <%--<div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="p-3">
                             <div class="row gy-3">
@@ -525,7 +531,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                     <img src="images/icons/nws-slide-arr-prev.png" class="nwsConBtnprev" />
                 </button>
@@ -533,9 +539,9 @@
                     <img src="images/icons/nws-slide-arr-nxt.png" class="nwsConBtnnxt" />
                 </button>
             </div>
-            <span class="space60"></span>
+            <span class="space80"></span>
             <div class="text-center">
-                <a href="#" class="btnViewMore">View More</a>
+                <a href="news" class="btnViewMore">View More</a>
             </div>
         </div>
     </section>
@@ -555,7 +561,8 @@
                     </p>
                     <span class="space30"></span>
                     <div class="row">
-                        <div class="col-lg-4" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" id="top1">
+                        <%=GetTopProjects() %>
+                        <%--<div class="col-lg-4" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" id="top1">
                             <div class="image-zoom">
                                 <img src="images/interior-1.jpg" class="img-fluid shadow" />
                             </div>
@@ -595,7 +602,7 @@
                                 <p class="light clrmediumgrey line-ht-5 mt-2">It is Centrally located in Kupwad city & Spread over 8 Acres of lush greenery. Royale Citee offers you </p>
                                 <a href="#" class="text-decoration-none">View More <img src="images/icons/nws-slide-arr-nxt.png" class="ms-3" /></a>
                             </div>
-                        </div>
+                        </div>--%>
                         <span class="space40"></span>
                     </div>
                 </div>
@@ -616,7 +623,8 @@
                 What People are saying to us
             </p>
             <div class="row">
-                <div class="col-lg-4" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <%=GetTestData() %>
+                <%--<div class="col-lg-4" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                     <a href="#" class="txtDecNo colorBlack">
                         <div class="p-3">
                             <span class="space10"></span>
@@ -653,12 +661,12 @@
                         <p class="fontRegular light  line-ht-5 mb-4 mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga soluta sit fugiat eum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga soluta sit fugiat eum!</p>
                         <a href="#" class="semiBold fontRegular text-decoration-none colorBlack readevnt">Read More <img src="images/icons/rght-icon.png" class="ms-2" /></a>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </div>
         <span class="space30"></span>
         <div class="text-center">
-            <a href="#" class="btnViewMore">View More</a>
+            <a href="testimonials" class="btnViewMore">View More</a>
         </div>
     </section>
     <!-- Testimonails start -->
@@ -666,7 +674,8 @@
     <section id="landdelop" class="mt-5">
         <div class="row p-0 g-0">
             <div class="col-md-6 position-relative" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="images/slide-1.jpg" class="img-fluid" />
+               <%-- <%=photogalimg %>--%>
+                <img src="images/plot-project.png" class="img-fluid" />
                 <div class="row">
                     <div class="col-5 shadow" id="landinfo">
                         <div class="bg-white shadow" style="position:absolute; bottom:0; left:120px; right:120px;">
@@ -679,9 +688,11 @@
                     </div>
                 </div>
             </div>
+           
             <div class="col-md-6">
                 <div class="row g-0">
-                    <div class="col-md-6" data-aos="zoom-in" data-aos-duration="1000">
+                     <%=GetPhotoGal() %>
+                    <%--<div class="col-md-6" data-aos="zoom-in" data-aos-duration="1000">
                         <a href="images/slide-2.jpg" data-fancybox="group2"><img src="images/slide-2.jpg" class="img-fluid w-100" /></a>
                     </div>
                     <div class="col-md-6" data-aos="zoom-in" data-aos-duration="1000">
@@ -692,7 +703,7 @@
                     </div>
                     <div class="col-md-6" data-aos="zoom-in" data-aos-duration="1000">
                         <a href="images/slide-3.jpg" data-fancybox="group2"><img src="images/slide-3.jpg" class="img-fluid" /></a>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>
@@ -746,12 +757,12 @@
                                 <h4 class="footerCaption clrWhite mb-2 semiBold upperCase letter-sp-2">Navigation</h4>
                                 <div class="fLine mb-3"><span class="fAbsLine"></span></div>
                                 <ul class="footerNav">
-                                    <li><a href="#">Home</a></li>
+                                    <li><a href="<%=rootPath %>">Home</a></li>
                                     <li><a href="about-us">About Us</a></li>
-                                    <li><a href="our-products">Projects</a></li>
-                                    <li><a href="enquiry">Enegry</a></li>
+                                    <li><a href="projects">Projects</a></li>
+                                    <li><a href="energy">Enegry</a></li>
                                     <li><a href="testimonials">Testimonials</a></li>
-                                    <li><a href="career">News</a></li>
+                                    <li><a href="news">News</a></li>
                                     <li><a href="contact-us">Contact us</a></li>
                                 </ul>
                             </div>
@@ -776,22 +787,22 @@
                                 <div class="fLine mb-3"><span class="fAbsLine"></span></div>
                                 <div class="row gy-2 gx-0 p-0">
                                     <div class="col-6">
-                                        <img src="images/interior-1.jpg" class="img-fluid rounded w-75" />
+                                        <img src="images/residental-project.jpg" class="img-fluid rounded w-75" />
                                     </div>
                                     <div class="col-6">
-                                        <p class="fontRegular footxtClr mt-3">Luxury House in Greenville</p>
+                                        <p class="fontRegular footxtClr mt-3">Luxury House in Sangli</p>
                                     </div>
                                     <div class="col-6">
-                                        <img src="images/interior-1.jpg" class="img-fluid rounded w-75" />
+                                        <img src="images/plot-project.png" class="img-fluid rounded w-75" />
                                     </div>
                                     <div class="col-6">
-                                        <p class="fontRegular footxtClr mt-3">Luxury House in Greenville</p>
+                                        <p class="fontRegular footxtClr mt-3">Luxury House in <br />Miraj</p>
                                     </div>
                                     <div class="col-6">
-                                        <img src="images/interior-1.jpg" class="img-fluid rounded w-75" />
+                                        <img src="images/royale-vt-avenue-na-plots-3.jpg" class="img-fluid rounded w-75" />
                                     </div>
                                     <div class="col-6">
-                                        <p class="fontRegular footxtClr mt-3">Luxury House in Greenville</p>
+                                        <p class="fontRegular footxtClr mt-3">Luxury House in Kolhapur</p>
                                     </div>
                                 </div>
                                 <!--<div class="fLine mb-3"><span class="fAbsLine"></span></div>

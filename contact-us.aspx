@@ -7,7 +7,7 @@
     <script type="text/javascript">
         function initialize() {
 
-            var myLatlng = new google.maps.LatLng(16.864602651367203, 74.57912492372752);
+            var myLatlng = new google.maps.LatLng(16.863799, 74.577958);
 
             var mapOptions = {
                 center: myLatlng,

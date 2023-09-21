@@ -1,0 +1,188 @@
+
+12/09/2023 03:14 PM
+ASP.adminpanel_news_master_aspx
+ImageUploadProcess
+Could not find a part of the path 'E:\Websites\shahDevelopers\upload\news\original\news-photo-212092023151406.jpg'.
+
+
+12/09/2023 03:22 PM
+ASP.adminpanel_dashboard_aspx
+GetCount
+Invalid object name 'EventsGallery'.
+
+
+12/09/2023 03:23 PM
+ASP.adminpanel_dashboard_aspx
+GetCount
+Invalid object name 'EventsGallery'.
+
+
+12/09/2023 03:46 PM
+ASP.adminpanel_testimonials_master_aspx
+FillGrid
+Invalid object name 'Testimonials'.
+
+
+12/09/2023 03:46 PM
+ASP.adminpanel_testimonials_master_aspx
+FillGrid
+A field or property with the name 'TestEmail' was not found on the selected data source.
+
+
+13/09/2023 10:55 AM
+ASP.adminpanel_customers_data_aspx
+FillGrid
+Invalid object name 'CustomersData'.
+
+
+13/09/2023 10:58 AM
+ASP.adminpanel_customers_data_aspx
+FillGrid
+Invalid object name 'CustomersData'.
+
+
+13/09/2023 10:58 AM
+ASP.adminpanel_customers_data_aspx
+FillGrid
+Invalid object name 'CustomersData'.
+
+
+13/09/2023 11:00 AM
+ASP.adminpanel_customers_data_aspx
+FillGrid
+Invalid object name 'CustomersData'.
+
+
+13/09/2023 11:05 AM
+ASP.adminpanel_customers_data_aspx
+FillGrid
+A field or property with the name 'CustJoinDate' was not found on the selected data source.
+
+
+13/09/2023 11:07 AM
+ASP.adminpanel_customers_data_aspx
+FillGrid
+Incorrect syntax near 'a'.
+
+
+13/09/2023 11:07 AM
+ASP.adminpanel_customers_data_aspx
+FillGrid
+Incorrect syntax near 'CustJoinDate'.
+
+
+13/09/2023 11:16 AM
+ASP.adminpanel_customers_data_aspx
+Page_Load
+'ddrProjId' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+
+
+13/09/2023 04:01 PM
+ASP.adminpanel_project_list_aspx
+Page_Load
+Thread was being aborted.
+
+
+13/09/2023 04:01 PM
+ASP.adminpanel_project_list_aspx
+Page_Load
+Thread was being aborted.
+
+
+15/09/2023 05:19 PM
+ASP.adminpanel_project_meta_aspx
+btnSave_Click
+Incorrect syntax near 's'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ' Where projId=6'.
+
+
+15/09/2023 05:21 PM
+ASP.adminpanel_project_meta_aspx
+btnSave_Click
+Incorrect syntax near 's'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ' Where projId=6'.
+
+
+15/09/2023 05:22 PM
+ASP.adminpanel_project_meta_aspx
+btnSave_Click
+Incorrect syntax near 's'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ' Where projId=6'.
+
+
+15/09/2023 05:24 PM
+ASP.adminpanel_project_meta_aspx
+btnSave_Click
+Incorrect syntax near 's'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ' Where projId=5'.
+
+
+15/09/2023 05:26 PM
+ASP.adminpanel_project_meta_aspx
+btnSave_Click
+Incorrect syntax near 's'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ' Where projId=6'.
+
+
+15/09/2023 05:32 PM
+ASP.adminpanel_project_meta_aspx
+btnSave_Click
+Incorrect syntax near 's'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ' Where projId=6'.
+
+
+16/09/2023 11:36 AM
+ASP.adminpanel_project_documents_aspx
+btnSave_Click
+Incorrect syntax near the keyword 'where'.
+
+
+16/09/2023 11:37 AM
+ASP.adminpanel_project_documents_aspx
+btnSave_Click
+Incorrect syntax near the keyword 'where'.
+
+
+21/09/2023 04:32 PM
+ASP.project_listings_aspx
+btnSave_Click
+Object reference not set to an instance of an object.
+
+
+21/09/2023 04:35 PM
+ASP.project_listings_aspx
+btnSave_Click
+Object reference not set to an instance of an object.
+
+
+21/09/2023 04:38 PM
+ASP.project_listings_aspx
+btnSave_Click
+Object reference not set to an instance of an object.
+
+
+21/09/2023 04:42 PM
+ASP.project_listings_aspx
+btnSave_Click
+The remote certificate is invalid according to the validation procedure.
+
+
+21/09/2023 05:39 PM
+ASP.adminpanel_banner_master_aspx
+btnSave_Click
+Invalid object name 'BannersData'.
+
+
+21/09/2023 05:40 PM
+ASP.adminpanel_banner_master_aspx
+FillGrid
+A field or property with the name 'BannerImage' was not found on the selected data source.
+
+
