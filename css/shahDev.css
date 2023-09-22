@@ -261,7 +261,7 @@ font-family: 'Varela Round', sans-serif;
 
 /*navigations*/
 .bgbanner{background:url("../images/projects/projectdemo-1.png") no-repeat center center; background-size:cover; width:100%; height:636px; z-index:999;}
-/*.lg{float:left;height:100px;width:100px;}*/
+
 .lgName{float:left; margin-top:15px}
 .btnContact{position:absolute; transition:0.5s; right:10px !important; background:#71574a; color:#fff; padding:10px;}
 .btnContact:hover{background:#000; color:#fff}
@@ -600,7 +600,7 @@ font-family: 'Varela Round', sans-serif;
 
 
 /*enquiry form */
-.conTextBox{padding:0.8em; display:block; resize:none; width:97%; border-bottom:1px solid #0187ce !important; transition:all 0.5s ease;background:#fff; border:1px solid #fff;}
+.conTextBox{padding:0.8em; display:block; resize:none; width:97%; border-bottom:1px solid #0187ce !important; transition:all 0.5s ease;background:none; border:1px solid #fff;}
 .conTextBox:focus{border:none; border-bottom:1px solid #0187ce !important; outline:none; border:1px solid #fff; }
 .buttonForm{background-color:#00a8eb; border:2px solid #fff; color:#fff; font-size:1em; padding:10px 18px; border-radius:2px; cursor:pointer; -webkit-transition:all 0.7s ease; transition:all 0.7s ease; font-weight:400;}
 .buttonForm:hover{border:2px solid #00b5f0; background:none; color:#00b5f0;}
@@ -871,6 +871,10 @@ font-family: 'Varela Round', sans-serif;
 .menu .tab-content .menu-item .ingredients {color: #8d8d9b; margin-bottom: 5px;}
 .menu .tab-content .menu-item .price {font-size: 24px; font-weight: 700; color: var(--color-primary);}
 
+
+/*Project listing*/
+.bgenquiry{background:url("../images/enquiry-form.png") no-repeat right center;}
+
 /*======================================================= Media Queries================================================*/
 @media (max-width: 1200px) {
     /*.pgsubtitle:after{right:20px !important; width:360px;}*/
@@ -921,6 +925,7 @@ font-family: 'Varela Round', sans-serif;
 }
 @media (max-width: 920px) 
 { 
+    #testimonials .container{margin-top:700px !important;}
     #form{display:none}
     #testimonials{margin-top:180px !important;}
     #top2{display:none}
@@ -971,6 +976,7 @@ font-family: 'Varela Round', sans-serif;
 }
 @media (max-width: 768px) 
 {
+     #testimonials .container{margin-top:770px !important;}
     .bannerht{height:280px !important;}
     #expcat .swiper-wrapper .swiper-slide {width: 70% !important; background:#ffa000}
     .nwsConBtnnxt{position:absolute; top:1230px; right:400px; }
@@ -1011,6 +1017,7 @@ font-family: 'Varela Round', sans-serif;
 }
 @media (max-width: 414px) 
 {
+      #testimonials .container{margin-top:840px !important;}
     #product .swiper-wrapper .swiper-slide {width: 100% !important;}
      #banner .col-10 .xxx-large{font-size:25px !important;}
      #banner .col-10 .regular{display:none;}
@@ -1029,6 +1036,7 @@ font-family: 'Varela Round', sans-serif;
 
 @media screen and (max-width: 375px) 
 {
+     #testimonials .container{margin-top:880px !important;}
   .lgName{width:130px !important; margin-top:30px;}
    .imgborder{margin-left:110px;}
      #lastele{margin-left:110px;}

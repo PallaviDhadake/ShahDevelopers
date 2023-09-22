@@ -89,7 +89,7 @@
 
                     <div id="proData" runat="server">
                         <span class="semiBold regular colorPrime">Project Status</span>
-                        <asp:DropDownList ID="ddrProjStatus" CssClass="form-control  w-25 mt-2" runat="server" OnSelectedIndexChanged="ddrProjStatus_SelectedIndexChanged" AutoPostBack="true">
+                        <asp:DropDownList ID="ddrProjStatus" CssClass="form-select  w-25 mt-2" runat="server" OnSelectedIndexChanged="ddrProjStatus_SelectedIndexChanged" AutoPostBack="true">
                             <asp:ListItem Value="0">-- All --</asp:ListItem>
                             <asp:ListItem Value="1">Current</asp:ListItem>
                             <asp:ListItem Value="2">Upcoming</asp:ListItem>

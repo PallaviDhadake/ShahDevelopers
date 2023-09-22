@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="_Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
 
@@ -77,36 +77,6 @@
             to {left: 200%;}
         }
     </style>
-
-
-     <%-- Tost Notification --%>
-    <link href="css/toastr.css" rel="stylesheet" />
-    <script src="js/toastr.js"></script>
-
-    <script type="text/javascript">
-        function TostTrigger(EventName, MsgText) {
-            // code to be executed
-            Command: toastr[EventName](MsgText)
-            toastr.options = {
-                "closeButton": true,
-                "debug": false,
-                "newestOnTop": false,
-                "progressBar": false,
-                "positionClass": "toast-top-full-width",
-                "preventDuplicates": false,
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "slideDown",
-                "hideMethod": "fadeOut"
-            }
-
-        }
-    </script>
 
 </head>
 <body>
@@ -201,60 +171,38 @@
             <div class="row">
                 <div class="col-9 bg-white shadow rounded Searchfrm">
                     <div class="p-4">
-                        <form runat="server">
+                        <form>
                             <div class="row g-4">
                                 <div class="form-row">
                                     <div class="row">
                                         <div class="form-group col-3">
-                                            <asp:DropDownList ID="ddrcat" CssClass="form-select" runat="server">
-                                                <asp:ListItem value="0">Category</asp:ListItem>
-                                                <asp:ListItem value="1">Apartment</asp:ListItem>
-                                                <asp:ListItem value="2">Houses</asp:ListItem>
-                                                <asp:ListItem value="3">Industrial</asp:ListItem>
-                                                <asp:ListItem value="4">Bunglow</asp:ListItem>
-                                            </asp:DropDownList>
-                                           <%-- <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select" aria-label="Default select example">
                                                 <option selected>Category</option>
                                                 <option value="1">Apartment</option>
                                                 <option value="2">Houses</option>
                                                 <option value="3">Industrial</option>
                                                 <option value="1">Bunglow</option>
-                                            </select>--%>
+                                            </select>
                                         </div>
                                         <div class="form-group col-3">
-                                             <asp:DropDownList ID="ddrcity" CssClass="form-select" runat="server">
-                                                <asp:ListItem value="0">City</asp:ListItem>
-                                                <asp:ListItem value="1">Sangli</asp:ListItem>
-                                                <asp:ListItem value="2">Kolhapur</asp:ListItem>
-                                                <asp:ListItem value="3">Miraj</asp:ListItem>
-                                                <asp:ListItem value="4">Pune</asp:ListItem>
-                                            </asp:DropDownList>
-                                          <%--  <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select" aria-label="Default select example">
                                                 <option selected>City</option>
                                                 <option value="1">Sangli</option>
                                                 <option value="2">Kolhapur</option>
                                                 <option value="3">Pune</option>
-                                            </select>--%>
+                                            </select>
                                         </div>
                                         <div class="form-group col-3">
-                                            <asp:DropDownList ID="ddrrooms" CssClass="form-select" runat="server">
-                                                <asp:ListItem value="0">Rooms</asp:ListItem>
-                                                <asp:ListItem value="1">1</asp:ListItem>
-                                                <asp:ListItem value="2">2</asp:ListItem>
-                                                <asp:ListItem value="3">3</asp:ListItem>
-                                                <asp:ListItem value="4">4</asp:ListItem>
-                                            </asp:DropDownList>
-                                           <%-- <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select" aria-label="Default select example">
                                                 <option selected>Rooms</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
                                                 <option value="3">3</option>
                                                 <option value="3">4</option>
-                                            </select>--%>
+                                            </select>
                                         </div>
                                         <div class="form-group col-3">
-                                            <asp:Button ID="btnSearch" CssClass="btn btn-primary w-100" runat="server" Text="Search" OnClick="btnSearch_Click" />
-                                            <%--<button type="submit" class="btn btn-primary w-100"><i class="bi-search"></i> Search</button>--%>
+                                            <button type="submit" class="btn btn-primary w-100"><i class="bi-search"></i> Search</button>
                                         </div>
                                     </div>
                                 </div>
@@ -263,7 +211,7 @@
                     </div>
                 </div>
             </div>
-        </div>      
+        </div>
     </section>
 
     <!-- data-aos="fade-down" data-aos-duration="1000" -->
@@ -455,10 +403,6 @@
         </div>
     </section>
     <!-- stat end -->
-
- 
-    
-
     <!-- News starts -->
     <section class="mt-5" id="news">
         <div class="container" data-aos="zoom-in" data-aos-duration="1000">
@@ -466,12 +410,8 @@
             <p class="light clrGrey mb-4 text-center">
                 Our distinctive buildings fill the skyline and streetscapes of the city
             </p>
-           <%-- <div id="carouselExampleControls" class="carousel slide position-relative" data-bs-ride="carousel">--%>
-            <div class="row gy-3">
+            <div id="carouselExampleControls" class="carousel slide position-relative" data-bs-ride="carousel">
                 <%=GetNewsData() %>
-            </div>
-                
-
                 <%--<div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="p-3">
@@ -594,13 +534,13 @@
                         </div>
                     </div>
                 </div>--%>
-                <%--<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                     <img src="images/icons/nws-slide-arr-prev.png" class="nwsConBtnprev" />
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                     <img src="images/icons/nws-slide-arr-nxt.png" class="nwsConBtnnxt" />
-                </button>--%>
-           <%-- </div>--%>
+                </button>
+            <%--</div>--%>
             <span class="space80"></span>
             <div class="text-center">
                 <a href="news" class="btnViewMore">View More</a>
@@ -622,7 +562,7 @@
                         You can list specific properties categories, types, cities, areas.
                     </p>
                     <span class="space30"></span>
-                    <div class="row gy-2">
+                    <div class="row">
                         <%=GetTopProjects() %>
                         <%--<div class="col-lg-4" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" id="top1">
                             <div class="image-zoom">

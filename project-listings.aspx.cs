@@ -10,7 +10,7 @@ using System.IO;
 public partial class project_listings : System.Web.UI.Page
 {
     iClass c = new iClass();
-    public string plotstr, plotammenities, projstr, photogal, document;
+    public string plotstr, plotammenities, projstr, photogal, document, projTitle, projectInfo;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -40,31 +40,64 @@ public partial class project_listings : System.Web.UI.Page
                     {
                         strMarkup.Append("<div class=\"\">");
 
-                        strMarkup.Append("<p class=\"colorPrime semiBold large\">" + row["projTitle"].ToString() + "</p>");
+                        strMarkup.Append("<p class=\"colorPrime semiBold large\" data-aos=\"fade-right\" data-aos-duration=\"1000\">" + row["projTitle"].ToString() + "</p>");
+
+                        projTitle = "<span class=\"Regular\">" + row["projTitle"].ToString() + "</span>";
 
                         if (row["projPhoto"] != DBNull.Value && row["projPhoto"].ToString() != "" && row["projPhoto"].ToString() != "no-photo.png" && row["projPhoto"] != null)
                         {
-                            strMarkup.Append("<img src=\"" + Master.rootPath + "/upload/projects/"+row["projPhoto"].ToString()+"\" class=\"img-fluid border shadow mb-3\"/>");
+                            strMarkup.Append("<img src=\"" + Master.rootPath + "/upload/projects/"+row["projPhoto"].ToString()+ "\" class=\"img-fluid border shadow mb-3\" data-aos=\"zoom-in\" data-aos-duration=\"1000\" />");
                         }
 
-                        strMarkup.Append("<span class=\"semiBold Regular\">Area of Land : <span class=\"light\">" + row["builtArea"].ToString() + " " + row["configData"].ToString() + "</span>");
-
-
+                        strMarkup.Append("<p class=\"medium colorPrime\">Overview</p>");
+                        
+                        strMarkup.Append("<span class=\"space5\"></span>");
                         strMarkup.Append("<div class=\"row\">");
-                        strMarkup.Append("<div class=\"\">");
-                        strMarkup.Append("<div class=\"\">");
-                        strMarkup.Append("<p class=\"semiBold semiMedium mb-3 mt-3 text-decoration-underline\">Location Advantages<p>");
-                        strMarkup.Append("<span class=\"Regular\">Address : </span>");
 
-                        strMarkup.Append("<span class=\"light line-ht-5 mt-2 mb-2\">" + row["addressData"].ToString() + "</span>");
-                        strMarkup.Append("<span class=\"space10\"></span>");
-                        strMarkup.Append("<span class=\"Regular\">Saleable Area : </span>");
+                        strMarkup.Append("<div class=\"col-md-3\">");
+                        strMarkup.Append("<span class=\"light semiBold\">Area of Land</span>");
+                        strMarkup.Append("<span class=\"space5\"></span>");
+                        strMarkup.Append("<span class=\"light\">" + row["builtArea"].ToString() + " " + row["configData"].ToString() + "</span>");
+                        strMarkup.Append("</div>");
 
-                        strMarkup.Append("<span class=\"light line-ht-5 mt-2\">" + row["builtArea"].ToString() + "</span>");
-                        strMarkup.Append("<span class=\"space10\"></span>");
-                        strMarkup.Append("<span class=\"Regular\">Price : </span>");
+                        strMarkup.Append("<div class=\"col-md-3\">");
+                        strMarkup.Append("<span class=\"light semiBold\">Address</span>");
+                        strMarkup.Append("<span class=\"space5\"></span>");
+                        strMarkup.Append("<span class=\"light\">" + row["addressData"].ToString() + "</span>");
+                        strMarkup.Append("</div>");
 
-                        strMarkup.Append("<span class=\"light line-ht-5 mt-2\">" + row["StartPrice"].ToString() + "</span>");
+                        strMarkup.Append("<div class=\"col-md-3\">");
+                        strMarkup.Append("<span class=\"light semiBold\">Saleable Area</span>");
+                        strMarkup.Append("<span class=\"space5\"></span>");
+                        strMarkup.Append("<span class=\"light\">" + row["builtArea"].ToString() + "</span>");
+                        strMarkup.Append("</div>");
+
+                        strMarkup.Append("<div class=\"col-md-3\">");
+                        strMarkup.Append("<span class=\"light semiBold\">Price</span>");
+                        strMarkup.Append("<span class=\"space5\"></span>");
+                        strMarkup.Append("<span class=\"light\">" + row["StartPrice"].ToString() + "</span>");
+                        strMarkup.Append("</div>");
+
+                        strMarkup.Append("</div>");
+
+                        //strMarkup.Append("<span class=\"regular\">Area of Land : <span class=\"light\">" + row["builtArea"].ToString() + " " + row["configData"].ToString() + "</span>");
+
+
+                        //strMarkup.Append("<div class=\"row\">");
+                        //strMarkup.Append("<div class=\"\">");
+                        //strMarkup.Append("<div class=\"\">");
+                        //strMarkup.Append("<p class=\"semiBold semiMedium mb-3 mt-3 text-decoration-underline\">Location Advantages<p>");
+                        //strMarkup.Append("<span class=\"Regular\">Address : </span>");
+
+                        //strMarkup.Append("<span class=\"light line-ht-5 mt-2 mb-2\">" + row["addressData"].ToString() + "</span>");
+                        //strMarkup.Append("<span class=\"space10\"></span>");
+                        //strMarkup.Append("<span class=\"Regular\">Saleable Area : </span>");
+
+                        //strMarkup.Append("<span class=\"light line-ht-5 mt-2\">" + row["builtArea"].ToString() + "</span>");
+                        //strMarkup.Append("<span class=\"space10\"></span>");
+                        //strMarkup.Append("<span class=\"Regular\">Price : </span>");
+
+                        //strMarkup.Append("<span class=\"light line-ht-5 mt-2\">" + row["StartPrice"].ToString() + "</span>");
 
                         strMarkup.Append("</div>");
                         strMarkup.Append("</div>");
@@ -72,9 +105,6 @@ public partial class project_listings : System.Web.UI.Page
                         //strMarkup.Append("<div class=\"col-md-6\">");
                         //strMarkup.Append("<div class=\"p-3\">");
                         //strMarkup.Append("<p class=\"semiBold semiMedium mb-3\">Plot Layout<p>");
-
-
-
                         //strMarkup.Append("</div>");
                         //strMarkup.Append("</div>");
 
@@ -106,8 +136,10 @@ public partial class project_listings : System.Web.UI.Page
                         }
                         else
                         {
-                            document = "<a href=\"#\" title=\"Download Brouchure pdfLink\" class=\"downBrouchure\" >Download Brouchure</a>";
+                            document = "<a href=\"#\" title=\"Download Brouchure pdfLink\" class=\"text-decoration-none pdfLink\" >Download Brouchure</a>";
                         }
+
+                        projectInfo = "<p class=\"light line-ht-5\">"+row["projInfo"].ToString() +"</p>";
 
                     }
                     projstr = strMarkup.ToString();
@@ -141,7 +173,7 @@ public partial class project_listings : System.Web.UI.Page
                     {
                         strMarkup.Append("<div class=\"container\">");
 
-                        strMarkup.Append("<p class=\"semiBold medium text-decoration-underline mb-4\">Plot Layout</p>");
+                        //strMarkup.Append("<p class=\"medium mb-4 colorPrime\">Floor Plans</p>");
 
                         if (row["fpImage"] != DBNull.Value && row["fpImage"].ToString() != "" && row["fpImage"].ToString() != "no-photo.png" && row["fpImage"] != null)
                         {
@@ -151,6 +183,10 @@ public partial class project_listings : System.Web.UI.Page
 
                     }
                     plotstr = strMarkup.ToString();
+                }
+                else
+                {
+                    plotstr = "Noting to display";
                 }
             }
         }
@@ -175,78 +211,78 @@ public partial class project_listings : System.Web.UI.Page
                     foreach (DataRow row in drplot.Rows)
                     {
                         strMarkup.Append("<div class=\"container text-center\">");
-                        strMarkup.Append("<div class=\"row gy-4\">");
+                        strMarkup.Append("<div class=\"row gy-2\" data-aos=\"fade-up-right\" data-aos-duration=\"1000\">");
                        
 
                         if (row["amIntrRoads"].ToString() == "1")
                         {
-                            strMarkup.Append("<div class=\"col-md-3\">");
-                            strMarkup.Append("<div class=\"p-2 border border-primary bg-white shadow\">");
+                            strMarkup.Append("<div class=\"col-md-2\">");
+                            strMarkup.Append("<div class=\"p-2\">");
                             strMarkup.Append("<img src=\""+Master.rootPath+"images/icons/international-tar-road.png\" class=\"img-fluid mt-3\"/>");
-                            strMarkup.Append("<p class=\"semiBold semiMedium mt-2\">Internal Tar Roads</p>");
+                            strMarkup.Append("<p class=\"fontRegular  mt-2\">Internal Tar Roads</p>");
                             strMarkup.Append("</div>");
                             strMarkup.Append("</div>");
                         }
                         if (row["amPlotElec"].ToString() == "1")
                         {
-                            strMarkup.Append("<div class=\"col-md-3\">");
-                            strMarkup.Append("<div class=\"p-2 border border-primary bg-white shadow\">");
+                            strMarkup.Append("<div class=\"col-md-2\">");
+                            strMarkup.Append("<div class=\"p-2\">");
                             strMarkup.Append("<img src=\""+ Master.rootPath + "/images/icons/electricity.png\" class=\"img-fluid mt-3\"/>");
-                            strMarkup.Append("<p class=\"semiBold semiMedium\">Electricity</p>");
+                            strMarkup.Append("<p class=\"fontRegular mt-2\">Electricity</p>");
                             strMarkup.Append("</div>");
                             strMarkup.Append("</div>");
                         }
                         if (row["amPlotWater"].ToString() == "1")
                         {
-                            strMarkup.Append("<div class=\"col-md-3\">");
-                            strMarkup.Append("<div class=\"p-2 border border-primary bg-white shadow\">");
+                            strMarkup.Append("<div class=\"col-md-2\">");
+                            strMarkup.Append("<div class=\"p-2\">");
                             strMarkup.Append("<img src=\""+Master.rootPath+"/images/icons/water-suppy.png\" class=\"img-fluid mt-3\"/>");
-                            strMarkup.Append("<p class=\"semiBold semiMedium\">Water Supply</p>");
+                            strMarkup.Append("<p class=\"light mt-2\">Water Supply</p>");
                             strMarkup.Append("</div>");
                             strMarkup.Append("</div>");
                         }
                         if (row["amPlotDrainage"].ToString() == "1")
                         {
-                            strMarkup.Append("<div class=\"col-md-3\">");
-                            strMarkup.Append("<div class=\"p-2 border border-primary bg-white shadow\">");
+                            strMarkup.Append("<div class=\"col-md-2\">");
+                            strMarkup.Append("<div class=\"p-2\">");
                             strMarkup.Append("<img src=\""+ Master.rootPath + "/images/icons/drainage.png" + "\" class=\"img-fluid mt-3\"/>");
-                            strMarkup.Append("<p class=\"semiBold semiMedium\">Drainage</p>");
+                            strMarkup.Append("<p class=\"light mt-2\">Drainage</p>");
                             strMarkup.Append("</div>");
                             strMarkup.Append("</div>");
                         }
                         if (row["amPlotGarden"].ToString() == "1")
                         {
-                            strMarkup.Append("<div class=\"col-md-3\">");
-                            strMarkup.Append("<div class=\"p-2 border border-primary bg-white shadow\">");
+                            strMarkup.Append("<div class=\"col-md-2\">");
+                            strMarkup.Append("<div class=\"p-2\">");
                             strMarkup.Append("<img src=\""+Master.rootPath+"/images/icons/landscape-garden.png\" class=\"img-fluid mt-3\"/>");
-                            strMarkup.Append("<p class=\"semiBold semiMedium\">Landscaped Gardens</p>");
+                            strMarkup.Append("<p class=\"light mt-2\">Landscaped Gardens</p>");
                             strMarkup.Append("</div>");
                             strMarkup.Append("</div>");
                         }
                         if (row["amPlotPlay"].ToString() == "1")
                         {
-                            strMarkup.Append("<div class=\"col-md-3\">");
-                            strMarkup.Append("<div class=\"p-2 border border-primary bg-white shadow\">");
+                            strMarkup.Append("<div class=\"col-md-2\">");
+                            strMarkup.Append("<div class=\"p-2\">");
                             strMarkup.Append("<img src=\""+Master.rootPath+"/images/icons/play-garden.png\" class=\"img-fluid mt-3\"/>");
-                            strMarkup.Append("<p class=\"semiBold semiMedium\">Children's Play Park</p>");
+                            strMarkup.Append("<p class=\"light mt-2\">Children's Play Park</p>");
                             strMarkup.Append("</div>");
                             strMarkup.Append("</div>");
                         }
                         if (row["amPlotStrLight"].ToString() == "1")
                         {
-                            strMarkup.Append("<div class=\"col-md-3\">");
-                            strMarkup.Append("<div class=\"p-2 border border-primary bg-white shadow\">");
+                            strMarkup.Append("<div class=\"col-md-2\">");
+                            strMarkup.Append("<div class=\"p-2\">");
                             strMarkup.Append("<img src=\""+Master.rootPath+"/images/icons/street-light.png\" class=\"img-fluid mt-3\"/>");
-                            strMarkup.Append("<p class=\"semiBold semiMedium\">Street Light</p>");
+                            strMarkup.Append("<p class=\"light mt-2\">Street Light</p>");
                             strMarkup.Append("</div>");
                             strMarkup.Append("</div>");
                         }
                         if (row["amPlotHarvest"].ToString() == "1")
                         {
-                            strMarkup.Append("<div class=\"col-md-3\">");
-                            strMarkup.Append("<div class=\"p-2 border border-primary bg-white shadow\">");
+                            strMarkup.Append("<div class=\"col-md-2\">");
+                            strMarkup.Append("<div class=\"p-2\">");
                             strMarkup.Append("<img src=\""+Master.rootPath+"/images/icons/rainwater-harvesting.png\" class=\"img-fluid mt-3\"/>");
-                            strMarkup.Append("<p class=\"semiBold semiMedium\">Rainwater Harvesting</p>");
+                            strMarkup.Append("<p class=\"light mt-2\">Rainwater Harvesting</p>");
                             strMarkup.Append("</div>");
                             strMarkup.Append("</div>");
                         }
@@ -259,7 +295,7 @@ public partial class project_listings : System.Web.UI.Page
                 }
                 else
                 {
-                    plotammenities = "<span class=\"infoClr\">Nothing to display come back later.....</span>";
+                    plotammenities = "Nothing to display come back later";
                 }
             }
         }
@@ -289,7 +325,7 @@ public partial class project_listings : System.Web.UI.Page
                         if (row["pgImage"] != DBNull.Value && row["pgImage"].ToString() != "" && row["pgImage"].ToString() != "no-photo.png" && row["pgImage"] != null)
                         {
                             strMarkup.Append("<a href=\"" + Master.rootPath + "/upload/projects/gallery/" + row["pgImage"].ToString() + "\" data-fancybox=\"group3\">");
-                            strMarkup.Append("<img src=\"" + Master.rootPath + "/upload/projects/gallery/thumb/" + row["pgImage"].ToString() + "\" class=\"img-fluid\" />");
+                            strMarkup.Append("<img src=\"" + Master.rootPath + "/upload/projects/gallery/thumb/" + row["pgImage"].ToString() + "\" class=\"img-fluid border\" data-aos=\"zoom-out\" data-aos-duration=\"1000\"  />");
                             strMarkup.Append("</a>");
                         }
                         strMarkup.Append("</div>");
@@ -297,6 +333,10 @@ public partial class project_listings : System.Web.UI.Page
 
                     }
                     photogal = strMarkup.ToString();
+                }
+                else
+                {
+                    photogal = "Noting to display";
                 }
             }
         }

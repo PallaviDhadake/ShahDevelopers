@@ -22,6 +22,7 @@
 
     <!-- aos -->
     <script src="<%=rootPath + "js/jquery-2.2.4.min.js"%>"></script>
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -43,6 +44,7 @@
     <link href="Vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
     <!--<a href="Vendor/bootstrap-icons/bootstrap-icons.json"></a>-->
 
+    <script src="<%=rootPath + "js/jquery.mb.YTPlayer.js"%>"></script>
 
     <%-- Tost Notification --%>
     <link href="<%=rootPath + "css/toastr.css"%>" rel="stylesheet" />
@@ -232,5 +234,31 @@
         <!-- Footer Ends -->
     </section>
     <!-- footer end -->
+
+    <script>
+        AOS.init();
+    </script>
+
+     <script type="text/javascript">
+         $('document').ready(function () {
+             if ($(".player").length > 0) {
+                 $(".player").mb_YTPlayer();
+             }
+         });
+     </script>
+
+     <script type="text/javascript">
+         function openNav() {
+             document.getElementById("topNavPanel").style.width = "320px";
+             document.getElementById("navBtn").style.zIndex = "0";
+         }
+
+         function closeNav() {
+             document.getElementById("topNavPanel").style.width = "0";
+             document.getElementById("navBtn").style.zIndex = "5";
+         }
+     </script>
+
+
 </body>
 </html>

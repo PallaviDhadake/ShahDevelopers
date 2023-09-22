@@ -9,7 +9,7 @@ using System.Text;
 public partial class _Default : System.Web.UI.Page
 {
     iClass c = new iClass();
-    
+
     public string currentyear, rootPath, photogalimg, bannerstr;
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -90,113 +90,86 @@ public partial class _Default : System.Web.UI.Page
             StringBuilder strMarkup = new StringBuilder();
             using (DataTable dttest = c.GetDataTable("select TOP 6 newsId, newsDate, newsTitle, newsInfo, readCount, newsPhoto from NewsData where delMark=0 order by newsId DESC"))
             {
-                string className = "";
+                //string className = "";
+                //string classrow = "";
+                //string classcaritem = "";
                 int i = 0;
                 if (dttest.Rows.Count > 0)
                 {
-                    strMarkup.Append("<div class=\"carousel-inner\" data-aos=\"fade-right\" data-aos-duration=\"1000\">");
+                    //strMarkup.Append("<div class=\"carousel-inner\" data-aos=\"fade-right\" data-aos-duration=\"1000\">");
 
                     foreach (DataRow row in dttest.Rows)
                     {
                         if (c.IsRecordExist("Select newsId From NewsData Where newsId=" + row["newsId"].ToString() + ""))
                         {
 
-                            i++;
+                            //i++;
 
-                            if (i == 1)
+                            //if (i == 1)
+                            //{
+                            //    className = "active";
+                            //    classrow = "row";
+                            //    classcaritem = "carousel-item";
+                            //}
+                            //else
+                            //{
+                            //    className = "";
+                            //    classrow = "";
+                            //    classcaritem = "";
+                            //}
+
+                            //strMarkup.Append("<div class=\""+ classcaritem + " " + className + "\">");
+                           // strMarkup.Append("<div class=\"p-3\">");
+                           // strMarkup.Append("<div class=\""+ row + "\">");
+
+
+                            strMarkup.Append("<div class=\"col-xl-6\">");
+                            strMarkup.Append("<div class=\"row bg-white g-0\">");
+
+                            //Col-4 end
+                            strMarkup.Append("<div class=\"col-md-4\">");
+                            if (c.IsRecordExist("select newsId from NewsData where newsPhoto='" + row["newsPhoto"].ToString() + "'"))
                             {
-                                className = "active";
+
+                                strMarkup.Append("<img src=\"" + rootPath + "upload/news/thumb/" + row["newsPhoto"].ToString() + "\" class=\"w-100 h-100 img-fluid p-0\"/>");
+
                             }
                             else
                             {
-                                className = "";
+                                //strMarkup.Append("<img src=\"images/icons/view-anch.png\" class=\"me-2\"/>");
+                                strMarkup.Append("<img src=\"images/shah-defult-news.jpg\" class=\"w-100 h-100 img-fluid p-0\"/>");
                             }
+                            strMarkup.Append("</div>");
+                            //Col-4 end
 
-                            strMarkup.Append("<div class=\"carousel-item " + className + "\">");
+                            //Col-8 start
+                            strMarkup.Append("<div class=\"col-md-8 shadow\">");
                             strMarkup.Append("<div class=\"p-3\">");
-                            strMarkup.Append("<div class=\"row\">");
-
-
-                                strMarkup.Append("<div class=\"col-xl-6\">");
-                                strMarkup.Append("<div class=\"row bg-white g-0\">");
-
-                                strMarkup.Append("<div class=\"col-md-4\">");
-                                if (c.IsRecordExist("select newsId from NewsData where newsPhoto='" + row["newsPhoto"].ToString() + "'"))
-                                {
-
-                                    strMarkup.Append("<img src=\"" + rootPath + "upload/news/thumb/" + row["newsPhoto"].ToString() + "\" class=\"w-100 h-100 img-fluid p-0\"/>");
-
-                                }
-                                else
-                                {
-                                    //strMarkup.Append("<img src=\"images/icons/view-anch.png\" class=\"me-2\"/>");
-                                    strMarkup.Append("<img src=\"images/shah-defult-news.jpg\" class=\"w-100 h-100 img-fluid p-0\"/>");
-                                }
-                                strMarkup.Append("</div>");
-
-                                strMarkup.Append("<div class=\"col-md-8 shadow\">");
-                                strMarkup.Append("<div class=\"p-3\">");
-                                string nUrl = rootPath + "news/" + c.UrlGenerator(row["newsTitle"].ToString().ToLower() + "-" + row["newsId"].ToString());
-                                string nwsTitle = row["newsTitle"].ToString().Length >= 28 ? row["newsTitle"].ToString().Substring(0, 39) + "..." : row["newsTitle"].ToString();
-                                strMarkup.Append("<a href=\"" + nUrl + "\" class=\"semiBold semiMedium line-ht-5 mb-2 newstitle text-decoration-none colorBlack\">" + nwsTitle + "</a>");
-                                strMarkup.Append("<span class=\"space5\"></span>");
-                                DateTime nDate = Convert.ToDateTime(row["newsDate"]);
-                                strMarkup.Append("<span class=\"fst-italic clrGrey\">" + nDate.ToString("dd MMM yyyy") + "</span>");
-                                string nwsDesc = row["newsInfo"].ToString().Length >= 170 ? row["newsInfo"].ToString().Substring(0, 170) + "..." : row["newsInfo"].ToString();
-                                strMarkup.Append("<p class=\"light clrmediumgrey line-ht-5 mt-2\">" + nwsDesc + "</p>");
-                                strMarkup.Append("<hr />");
-                                strMarkup.Append("<img src=\"images/icons/view-anch.png\" class=\"me-2\"/><span class=\"clrGrey me-3\">" + row["readCount"].ToString() + "</span> <span class=\"clrGrey me-2\">By - Admin | Shah Developers</span><a href=\"" + nUrl + "\"><img src=\"images/icons/arr-right.png\" /></a>");
-                                //strMarkup.Append("")
-                                strMarkup.Append("</div>");
-                                strMarkup.Append("</div>");
-
-                                strMarkup.Append("</div>");
-                                strMarkup.Append("</div>");
-
-
-                                //Col another markup
-                                strMarkup.Append("<div class=\"col-xl-6\">");
-                                strMarkup.Append("<div class=\"row bg-white g-0\">");
-
-                                strMarkup.Append("<div class=\"col-md-4\">");
-                                if (c.IsRecordExist("select newsId from NewsData where newsPhoto='" + row["newsPhoto"].ToString() + "'"))
-                                {
-
-                                    strMarkup.Append("<img src=\"" + rootPath + "upload/news/thumb/" + row["newsPhoto"].ToString() + "\" class=\"w-100 h-100 img-fluid p-0\"/>");
-
-                                }
-                                else
-                                {
-
-                                    strMarkup.Append("<img src=\"images/shah-defult-news.jpg\" class=\"w-100 h-100 img-fluid p-0\"/>");
-                                }
-                                strMarkup.Append("</div>");
-                                strMarkup.Append("<div class=\"col-md-8 shadow\">");
-                                strMarkup.Append("<div class=\"p-3\">");
-                                string nUrl1 = rootPath + "news/" + c.UrlGenerator(row["newsTitle"].ToString().ToLower() + "-" + row["newsId"].ToString());
-                                string nwsTitle1 = row["newsTitle"].ToString().Length >= 28 ? row["newsTitle"].ToString().Substring(0, 39) + "..." : row["newsTitle"].ToString();
-                                strMarkup.Append("<a href=\"" + nUrl + "\" class=\"semiBold semiMedium line-ht-5 mb-2 newstitle text-decoration-none colorBlack\">" + nwsTitle + "</a>");
-                                strMarkup.Append("<span class=\"space5\"></span>");
-                                DateTime nDate1 = Convert.ToDateTime(row["newsDate"]);
-                                strMarkup.Append("<span class=\"fst-italic clrGrey\">" + nDate.ToString("dd MMM yyyy") + "</span>");
-                                string nwsDesc1 = row["newsInfo"].ToString().Length >= 170 ? row["newsInfo"].ToString().Substring(0, 170) + "..." : row["newsInfo"].ToString();
-                                strMarkup.Append("<p class=\"light clrmediumgrey line-ht-5 mt-2\">" + nwsDesc + "</p>");
-                                strMarkup.Append("<hr />");
-                                strMarkup.Append("<img src=\"images/icons/view-anch.png\" class=\"me-2\"/><span class=\"clrGrey me-3\">" + row["readCount"].ToString() + "</span> <span class=\"clrGrey me-2\">By - Admin | Shah Developers</span><a href=\"" + nUrl + "\"><img src=\"images/icons/arr-right.png\" /></a>");
-                                //strMarkup.Append("")
-                                strMarkup.Append("</div>");
-                                strMarkup.Append("</div>");
-                                strMarkup.Append("</div>");
-                                strMarkup.Append("</div>");
-                           
-
+                            string nUrl = rootPath + "news/" + c.UrlGenerator(row["newsTitle"].ToString().ToLower() + "-" + row["newsId"].ToString());
+                            string nwsTitle = row["newsTitle"].ToString().Length >= 28 ? row["newsTitle"].ToString().Substring(0, 39) + "..." : row["newsTitle"].ToString();
+                            strMarkup.Append("<a href=\"" + nUrl + "\" class=\"semiBold semiMedium line-ht-5 mb-2 newstitle text-decoration-none colorBlack\">" + nwsTitle + "</a>");
+                            strMarkup.Append("<span class=\"space5\"></span>");
+                            DateTime nDate = Convert.ToDateTime(row["newsDate"]);
+                            strMarkup.Append("<span class=\"fst-italic clrGrey\">" + nDate.ToString("dd MMM yyyy") + "</span>");
+                            string nwsDesc = row["newsInfo"].ToString().Length >= 170 ? row["newsInfo"].ToString().Substring(0, 170) + "..." : row["newsInfo"].ToString();
+                            strMarkup.Append("<p class=\"light clrmediumgrey line-ht-5 mt-2\">" + nwsDesc + "</p>");
+                            strMarkup.Append("<hr />");
+                            strMarkup.Append("<img src=\"images/icons/view-anch.png\" class=\"me-2\"/><span class=\"clrGrey me-3\">" + row["readCount"].ToString() + "</span> <span class=\"clrGrey me-2\">By - Admin | Shah Developers</span><a href=\"" + nUrl + "\"><img src=\"images/icons/arr-right.png\" /></a>");
+                            //strMarkup.Append("")
                             strMarkup.Append("</div>");
                             strMarkup.Append("</div>");
+
+                            //Col-8 end
                             strMarkup.Append("</div>");
+                            strMarkup.Append("</div>");
+
+                          //  strMarkup.Append("</div>");
+                            //strMarkup.Append("</div>");
+                           // strMarkup.Append("</div>");
 
                         }
                     }
-                    strMarkup.Append("</div>");
+                    //strMarkup.Append("</div>");
                     return strMarkup.ToString();
                 }
                 else
@@ -357,16 +330,19 @@ public partial class _Default : System.Web.UI.Page
 
                             strMarkup.Append("<div class=\"col-lg-4\"  data-aos=\"fade-right\"  data-aos-duration=\"1000\">");
 
-                            strMarkup.Append("<a href=\"testimonials#"+row["testId"].ToString()+"\" class=\"txtDecNo colorBlack\">");
+                            strMarkup.Append("<a href=\"testimonials#" + row["testId"].ToString() + "\" class=\"txtDecNo colorBlack\">");
                             strMarkup.Append("<div class=\"p-3\">");
                             strMarkup.Append("<span class=\"space10\"></span>");
                             DateTime nDate = Convert.ToDateTime(row["testDate"]);
-                            strMarkup.Append("<span class=\"clrGrey light small\">"+nDate.ToString("dd.MM.yyyy")+"</span>");
+                            strMarkup.Append("<span class=\"clrGrey light small\">" + nDate.ToString("dd.MM.yyyy") + "</span>");
                             strMarkup.Append("<span class=\"space10\"></span>");
-                            strMarkup.Append("<h4 class=\"semiBold semiMedium eventheading\">"+row["testPerson"].ToString()+"</h4>");
+                            strMarkup.Append("<h4 class=\"semiBold semiMedium eventheading\">" + row["testPerson"].ToString() + "</h4>");
                             strMarkup.Append("<span class=\"clrGrey small\">Happy Buyer</span>");
                             strMarkup.Append("<hr />");
                             string testdesc = row["testComment"].ToString().Length >= 171 ? row["testComment"].ToString().Substring(0, 171) + "..." : row["testComment"].ToString();
+
+                            strMarkup.Append("<p class=\"fontRegular light  line-ht-5 mb-4 mt-3\">"+ testdesc + "</p>");
+
                             strMarkup.Append("<a href=\"testimonials#" + row["testId"].ToString() + "\" class=\"semiBold fontRegular text-decoration-none colorBlack readevnt\">Read More <img src=\"images/icons/rght-icon.png\" class=\"ms-2\"/></a>");
                             strMarkup.Append("</div>");
                             strMarkup.Append("</a>");
@@ -402,8 +378,10 @@ public partial class _Default : System.Web.UI.Page
                     foreach (DataRow row in dttest.Rows)
                     {
                         strMarkup.Append("<div class=\"col-md-6\" data-aos=\"zoom-in\" data-aos-duration=\"1000\">");
-                        strMarkup.Append("<a href=\""+rootPath+ "upload/projects/gallery/" + row["pgImage"].ToString()+ "\" data-fancybox=\"group2\">");
-                        strMarkup.Append("<img src=\"" + rootPath + "upload/projects/gallery/thumb/" + row["pgImage"].ToString() + "\" class=\"img-fluid\" style=\"width:400px; height:250px;\">");
+                        strMarkup.Append("<a href=\"" + rootPath + "upload/projects/gallery/" + row["pgImage"].ToString() + "\" data-fancybox=\"group2\">");
+
+                        strMarkup.Append("<img src=\"" + rootPath + "upload/projects/gallery/thumb/" + row["pgImage"].ToString() + "\" class=\"img-fluid w-100\" style=\"height:auto;\">");
+
                         strMarkup.Append("</a>");
                         strMarkup.Append("</div>");
 
@@ -431,37 +409,50 @@ public partial class _Default : System.Web.UI.Page
             StringBuilder strMarkup = new StringBuilder();
             using (DataTable dttest = c.GetDataTable("select TOP 3 projId, projTitle, projInfo, projPhoto, addressData, builtArea, StartPrice  from ProjectData order by projId DESC"))
             {
+                string prrojid = "";
+                int i = 0;
                 if (dttest.Rows.Count > 0)
                 {
                     //strMarkup.Append("<div class=\"col-md-6\" data-aos=\"zoom-in\" data-aos-duration=\"1000\">");
                     foreach (DataRow row in dttest.Rows)
                     {
+                        i++;
+                        prrojid = "top1";
 
-                        strMarkup.Append("<div class=\"col-lg-4\" data-aos=\"fade-down\" data-aos-easing=\"linear\" data-aos-duration=\"1500\" id=\"top1\">");
+                        strMarkup.Append("<div class=\"col-lg-4 col-xs-12\" data-aos=\"fade-down\" data-aos-easing=\"linear\" data-aos-duration=\"1500\" id=\""+ prrojid + "\">");
                         strMarkup.Append("<div class=\"image-zoom\" style=\"height:210px;\">");
-                        strMarkup.Append("<img src=\"" + rootPath + "upload/projects/thumb/" + row["projPhoto"].ToString() + "\" class=\"img-fluid shadow\">");
+                        strMarkup.Append("<img src=\"" + rootPath + "upload/projects/thumb/" + row["projPhoto"].ToString() + "\" class=\"img-fluid shadow width100\">");
                         strMarkup.Append("</div>");
 
                         strMarkup.Append("<div class=\"p-4 bg-white shadow\">");
-                        strMarkup.Append("<p class=\"semiBold semiMedium colorPrime mb-2 projtitle\">"+row["projTitle"].ToString() +"</p>");
+                        strMarkup.Append("<p class=\"semiBold semiMedium colorPrime mb-2 projtitle\">" + row["projTitle"].ToString() + "</p>");
                         strMarkup.Append("<p class=\"clrGrey light mb-2\"><b class=\"semiBold\">Address :</b>" + row["addressData"].ToString() + "</p>");
-                        strMarkup.Append("<p class=\"clrGrey light mb-2\"><b class=\"semiBold\">Saleable Area :</b>"+row["builtArea"].ToString() +"</p>");
+                        strMarkup.Append("<p class=\"clrGrey light mb-2\"><b class=\"semiBold\">Saleable Area :</b>" + row["builtArea"].ToString() + "</p>");
                         strMarkup.Append("<p class=\"clrGrey light mb-2\"><b class=\"semiBold\">Price :</b>" + row["StartPrice"].ToString() + "</p>");
 
                         string projinfo = row["projInfo"].ToString().Length >= 102 ? row["projInfo"].ToString().Substring(0, 102) + "..." : row["projInfo"].ToString();
 
-                        strMarkup.Append("<p class=\"light clrmediumgrey line-ht-5 mt-2\">"+ projinfo + "</p>");
+                        strMarkup.Append("<p class=\"light clrmediumgrey line-ht-5 mt-2\">" + projinfo + "</p>");
                         strMarkup.Append("<a href=\"projects\" class=\"text-decoration-none\">View More <ims src=\"images/icons/nws-slide-arr-nxt.png\" class=\"ms-3\"/></a>");
                         strMarkup.Append("</div>");
                         //strMarkup.Append("<a href=\"" + rootPath + "upload/projects/gallery/" + row["pgImage"].ToString() + "\" data-fancybox=\"group2\">");
-                       
+
                         //strMarkup.Append("</a>");
 
-                        
-                        strMarkup.Append("</div>");
 
+                        strMarkup.Append("</div>");
+                       
                         //photogalimg = strMarkup.Append("<img src=\"" + rootPath + "upload/projects/gallery/" + row["pgImage"].ToString() + "\"/>").ToString();
                     }
+                    //strMarkup.Append("<span class=\"space80\"></span>");
+                    //strMarkup.Append("<span class=\"space80\"></span>");
+                    //strMarkup.Append("<span class=\"space80\"></span>");
+                    //strMarkup.Append("<span class=\"space80\"></span>");
+                    //strMarkup.Append("<span class=\"space80\"></span>");
+                    //strMarkup.Append("<span class=\"space80\"></span>");
+                    //strMarkup.Append("<span class=\"space80\"></span>");
+                    //strMarkup.Append("<span class=\"space80\"></span>");
+                    //strMarkup.Append("<span class=\"space80\"></span>");
                     return strMarkup.ToString();
                 }
                 else
@@ -476,4 +467,15 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        if (ddrcat.SelectedValue == "0" || ddrcity.SelectedValue == "0" || ddrrooms.SelectedValue == "0")
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "myScript", "TostTrigger('warning', 'All * marked fields are mandatory');", true);
+            return;
+        }
+
+        Response.Redirect("projects/land-developement");
+    }
 }
