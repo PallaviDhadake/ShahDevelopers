@@ -28,9 +28,10 @@ public partial class testimonials : System.Web.UI.Page
                 {
                     
                     StringBuilder strMarkup = new StringBuilder();
+                    strMarkup.Append("<div class=\"masonry\">");
                     foreach (DataRow row in dtnws.Rows)
                     {
-                        strMarkup.Append("<div class=\"col-lg-6\" id=\"" + row["testId"] + "\">");
+                        strMarkup.Append("<div class=\"item\" id=\"" + row["testId"] + "\">");
                         strMarkup.Append("<div class=\"card mb-3\">");
                         strMarkup.Append("<div class=\"card-header\">"+ row["orgName"].ToString() +"</div>");
                         strMarkup.Append("<div class=\"card-body\">");
@@ -43,6 +44,7 @@ public partial class testimonials : System.Web.UI.Page
                         strMarkup.Append("</div>");
                         strMarkup.Append("</div>");
                     }
+                    strMarkup.Append("</div>");
                     teststr = strMarkup.ToString();
                 }
                 else

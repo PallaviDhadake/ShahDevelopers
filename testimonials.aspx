@@ -2,6 +2,21 @@
 <%@ MasterType VirtualPath="~/MasterParent.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        .masonry { /* Masonry container */
+  column-count: 2;
+  column-gap: 1em;
+}
+
+.item { /* Masonry bricks or child elements */
+  /*background-color: #eee;*/
+  display: inline-block;
+  margin: 0 0 0.6em;
+  width: 100%;
+}
+
+
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <!-- Page Header Starts -->
@@ -23,8 +38,13 @@
             <h2 class="semiBold medium colorPrime mb-2">Testimonials</h2>
             <p class="shorline"></p>
         </div>
+        <span class="space20"></span>
+        <%=teststr %>
+      
+
+
         <div class="row gy-3 mt-3">
-            <%=teststr %>
+            <%--<%=teststr %>--%>
             <%--<div class="col-lg-6">
                 <div class="card mb-3">
                     <div class="card-header">
